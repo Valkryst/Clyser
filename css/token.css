@@ -1,0 +1,13 @@
+#token {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > img {
+        width: 6rem;
+
+        border-radius: 50%;
+
+        image-rendering: pixelated;
+    }
+}

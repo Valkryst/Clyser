@@ -1,0 +1,94 @@
+html {
+    --color-background: #1A1C1A;
+    --color-foreground: #F7F7F7;
+
+    --color-link-unvisited: #00FF9D;
+    --color-link-visited: #FF007A;
+
+    --color-h1: #E8A317;
+
+    --color-table-background-even: var(--color-background);
+    --color-table-background-odd: #222;
+    --color-table-border: #444;
+    --color-table-header: #333;
+
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+
+    & > body {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+a {
+    color: var(--color-link-unvisited);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:visited {
+        color: var(--color-link-visited);
+    }
+}
+
+a, a:visited {
+    &:focus, &:hover {
+        color: var(--color-foreground);
+    }
+}
+
+h1 {
+    color: var(--color-h1);
+}
+
+table {
+    width: 100%;
+
+    background-color: var(--color-background);
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+
+    border-collapse: collapse;
+    border: 1px solid var(--color-table-border);
+
+    & > thead > tr > th {
+        background-color: var(--color-table-header);
+    }
+
+    & > tbody > tr {
+        & > td {
+            border-bottom: 1px solid var(--color-table-border);
+
+            & > img {
+                width: 2rem;
+
+                border-radius: 50%;
+
+                image-rendering: pixelated;
+            }
+        }
+
+        & > td:not(:first-child) {
+            padding: 1rem;
+        }
+
+        &:nth-child(even) {
+            background-color: var(--color-table-background-even);
+        }
+
+        &:nth-child(odd) {
+            background-color: var(--color-table-background-odd);
+        }
+    }
+}
+
+/*@media only screen and (max-width: 300px) {*/
+/*    table {*/
+/*        & > tbody > tr {*/
+/*            & > td:not(:first-child) {*/
+/*                padding: 0.5rem;*/
+/*            }*/
+/*        }*/
+/*    }*/
+/*}*/

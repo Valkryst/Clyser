@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width' />
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/token.css">
+    </head>
+
+    <body>
+        <main id="token">
+            <noscript>This website requires JavaScript. Please enable it.</noscript>
+        </main>
+    </body>
+
+    <script type="module">
+        import {Token} from './js/component/token/token.js';
+        import {getTokenData} from './js/api/coingecko/token.js';
+        import {validateString, validateToken} from './js/validation.js';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const tokenId = urlParams.get('tokenId');
+        const chain = urlParams.get('chain');
+
+        try {
+            validateString(tokenId);
+            validateString(chain);
+
+            const tokens = getTokenData(chain);
+            const token = tokens.tokens.find(token => token.id === tokenId);
+
+            validateToken(token);
+
+            const titleElement = document.getElementsByTagName('title')[0];
+            titleElement.innerText = token.name;
+
+            const mainElement = document.getElementsByTagName('main')[0];
+            mainElement.innerHTML = Token.render(token);
+        } catch (error) {
+            console.error(error)
+            window.location.replace('./404.html');
+        }
+    </script>
+</html>
