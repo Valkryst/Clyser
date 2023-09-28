@@ -1,5 +1,73 @@
 .token-list {
-    & > tbody > tr > td:first-child {
-        text-align: center;
+    --logo-size: 4rem;
+
+    border: none;
+
+    & > thead {
+        display: none;
+    }
+
+    & > tbody {
+        & > tr {
+            & > td {
+                display: flex;
+
+                margin-left: calc(var(--logo-size) * 2);
+
+                border-bottom: none;
+
+                &:first-child {
+                    position: absolute;
+                    left: calc(var(--logo-size) * -1.5);
+
+                    transform: translateY(calc(var(--logo-size) * 0.5));
+                }
+
+                & > img {
+                    width: var(--logo-size);
+
+                    border-radius: 50%;
+
+                    image-rendering: pixelated;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .token-list {
+        & > thead {
+            display: table-header-group;
+        }
+
+        & > tbody {
+            & > tr {
+                & > td {
+                    display: table-cell;
+
+                    margin-left: 0;
+
+                    &:first-child {
+                        position: initial;
+                        left: auto;
+
+                        width: 4rem;
+
+                        text-align: center;
+
+                        transform: none;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    & > img {
+                        width: auto;
+                    }
+                }
+            }
+        }
     }
 }

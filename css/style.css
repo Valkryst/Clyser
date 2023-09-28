@@ -80,14 +80,6 @@ table {
     & > tbody > tr {
         & > td {
             border-bottom: 1px solid var(--color-table-border);
-
-            & > img {
-                width: 2rem;
-
-                border-radius: 50%;
-
-                image-rendering: pixelated;
-            }
         }
 
         & > td:not(:first-child) {
@@ -103,13 +95,3 @@ table {
         }
     }
 }
-
-/*@media only screen and (max-width: 300px) {*/
-/*    table {*/
-/*        & > tbody > tr {*/
-/*            & > td:not(:first-child) {*/
-/*                padding: 0.5rem;*/
-/*            }*/
-/*        }*/
-/*    }*/
-/*}*/
