@@ -21,26 +21,12 @@
     </footer>
 
     <script type="module">
-        import {ENDPOINTS, getTokenData, getTotalChains, refreshTokenCache} from './js/api/coingecko/token.js';
+        import {TokenSearchForm} from './js/component/token/token_search_form.js';
         import {ProgressBar} from './js/component/progress_bar.js';
-        import {TokenList} from './js/component/token/token_list.js';
-        import {refreshTokenPriceCache} from "./js/api/coingecko/token_price.js";
-        import {validateChainArray} from './js/validation.js';
+        import {getTotalChains, refreshTokenCache} from './js/api/coingecko/token.js';
+        import {refreshTokenPriceCache} from './js/api/coingecko/token_price.js';
 
-        function getChains() {
-            const urlParams = new URLSearchParams(window.location.search);
-
-            let chains = null;
-            try {
-                chains = urlParams.get('chains').split(',');
-                validateChainArray(chains);
-            } catch(error) {
-                chains = ENDPOINTS.keys();
-            }
-
-            return chains;
-        }
-
+        // todo This load code is used both here and in tokens.html. It should be moved to a separate file.
         document.getElementsByTagName('main')[0].innerHTML = ProgressBar.render('progress-bar', 'Loading tokens...');
         async function load() {
             const progressBar = document.getElementById('progress-bar');
@@ -58,19 +44,6 @@
 
         await load();
 
-        const tokens = [];
-        for (const chain of getChains()) {
-            try {
-                let data = getTokenData(chain);
-                if (!data) {
-                    continue;
-                }
-
-                tokens.push(...data.tokens);
-            } catch(error) {
-                console.log(error); // todo Handle the error in some other way?
-            }
-        }
-        document.getElementsByTagName('main')[0].innerHTML = TokenList.render('token-list', tokens);
+        document.getElementsByTagName('main')[0].innerHTML = TokenSearchForm.render();
     </script>
 </html>
