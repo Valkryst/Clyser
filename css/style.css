@@ -12,12 +12,33 @@ html {
     --color-table-border: #444;
     --color-table-header: #333;
 
+    height: 100%;
+
     color: var(--color-foreground);
     background-color: var(--color-background);
 
     & > body {
+        display: grid;
+        grid-template-rows: auto 1rem;
+
+        height: 100%;
         width: 100%;
+
         margin: 0;
+
+        & > main {
+            & > #progress-bar {
+                position: relative;
+                top: 50%;
+
+                display: block;
+
+                height: 2rem;
+                width: 20rem;
+
+                margin: 0 auto;
+            }
+        }
     }
 }
 
