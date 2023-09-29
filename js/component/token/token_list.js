@@ -23,7 +23,6 @@ export const TokenList = {
 
         return `
             <table id='${id}' class='token-list'>
-                <caption>A list of all ${tableRows.length} supported tokens.</caption>
                 <thead>
                     <tr>
                         <th>Logo</th>
