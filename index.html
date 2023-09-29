@@ -36,28 +36,10 @@
     </footer>
 
     <script type="module">
+        import {initializeTokenData} from './js/initalizer/token_data_initializer.js';
         import {TokenSearchForm} from './js/component/token/token_search_form.js';
-        import {ProgressBar} from './js/component/progress_bar.js';
-        import {getTotalChains, refreshTokenCache} from './js/api/coingecko/token.js';
-        import {refreshTokenPriceCache} from './js/api/coingecko/token_price.js';
 
-        // todo This load code is used both here and in tokens.html. It should be moved to a separate file.
-        document.getElementsByTagName('main')[0].innerHTML = ProgressBar.render('progress-bar', 'Loading tokens...');
-        async function load() {
-            const progressBar = document.getElementById('progress-bar');
-            const progressIncrement = progressBar.max / (getTotalChains() + 2);
-
-            progressBar.setAttribute('aria-label', 'Loading tokens...');
-            await refreshTokenCache(() => {
-                progressBar.value += progressIncrement;
-            });
-
-            await refreshTokenPriceCache(() => {
-                progressBar.value += progressIncrement;
-            }, []);
-        }
-
-        await load();
+        await initializeTokenData();
 
         document.getElementsByTagName('main')[0].innerHTML = TokenSearchForm.render();
     </script>

@@ -20,6 +20,9 @@
         import {Token} from './js/component/token/token.js';
         import {getTokenData} from './js/api/coingecko/token.js';
         import {validateString, validateToken} from './js/validation.js';
+        import {initializeTokenData} from './js/initalizer/token_data_initializer.js';
+
+        await initializeTokenData();
 
         const urlParams = new URLSearchParams(window.location.search);
         const tokenId = urlParams.get('tokenId');
