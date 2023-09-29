@@ -8,6 +8,18 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/token/token_list.css">
+
+    <style>
+        form {
+            display: grid;
+            grid-template-columns: auto 8rem 8rem;
+            grid-column-gap: 0.25rem;
+
+            width: 60rem;
+
+            margin: 2rem auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,6 +37,7 @@
     import {TokenList} from './js/component/token/token_list.js';
     import {validateChainArray} from './js/validation.js';
     import {initializeTokenData} from './js/initalizer/token_data_initializer.js';
+    import {TokenSearchForm} from './js/component/token/token_search_form.js';
 
     function getChains() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -77,6 +90,8 @@
 
     await initializeTokenData();
 
-    document.getElementsByTagName('main')[0].innerHTML = TokenList.render('token-list', getTokens());
+    const mainElement = document.getElementsByTagName('main')[0];
+    mainElement.innerHTML = TokenSearchForm.render();
+    mainElement.innerHTML += TokenList.render('token-list', getTokens());
 </script>
 </html>
