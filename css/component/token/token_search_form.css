@@ -1,0 +1,18 @@
+#token-search-form {
+    display: grid;
+    grid-row-gap: 4px;
+    grid-template-rows: repeat(2, auto);
+
+    margin: 0 auto;
+    padding: 16px;
+
+    max-width: 750px;
+}
+
+@media only screen and (min-width: 550px) {
+    #token-search-form {
+        grid-column-gap: 4px;
+        grid-template-columns: auto 20% 20%;
+        grid-template-rows: 100%;
+    }
+}
