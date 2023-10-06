@@ -1,4 +1,4 @@
-import {validateString, validateStringArray} from '../validation.js';
+import {validateString} from '../validation.js';
 
 /**
  * Renders a progress bar with a label.
