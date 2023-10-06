@@ -9,7 +9,7 @@ const URL_SUPPORTED_TOKENS = 'https://api.coingecko.com/api/v3/coins/list?includ
 /**
  * Fetches the set of supported tokens and saves it in the local storage.
  *
- * @param progressCallback Callback function to measure progress. Called once.
+ * @param {function} progressCallback Callback function to measure progress. Called once.
  * @returns {Promise<void>} Promise that resolves when all data has been processed.
  */
 export async function refreshSupportedTokens(progressCallback) {
@@ -42,7 +42,7 @@ export async function refreshSupportedTokens(progressCallback) {
 /**
  * Determines whether a given token is supported by the application.
  *
- * @param token Token to check.
+ * @param {object} token Token to check.
  * @returns {boolean} Whether the token is supported.
  * @throws {Error} Thrown if the token is invalid or if there's an error parsing the cached data.
  */
@@ -65,7 +65,7 @@ function getCacheKey() {
 /**
  * Returns the ID of a given token.
  *
- * @param token Token to retrieve the ID for.
+ * @param {object} token Token to retrieve the ID for.
  * @returns {string} ID of the token.
  * @throws {Error} Thrown if the token is invalid or if there's an error parsing the cached data.
  */

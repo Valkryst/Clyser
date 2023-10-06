@@ -10,7 +10,7 @@ export const MILLISECONDS_ONE_DAY = 86_400_000;
 /**
  * For each key, deletes the associated cache data.
  *
- * @param keys Keys whose associated cache data should be deleted.
+ * @param {string[]} keys Keys whose associated cache data should be deleted.
  */
 export function clear(...keys) {
     validateStringArray(keys);
@@ -24,8 +24,8 @@ export function clear(...keys) {
 /**
  * Determines whether the cache for a given key needs to be refreshed.
  *
- * @param key Key used to retrieve the cached data.
- * @param refreshInterval Number of milliseconds to elapse before the cache needs to be refreshed.
+ * @param {string} key Key used to retrieve the cached data.
+ * @param {number} refreshInterval Number of milliseconds to elapse before the cache needs to be refreshed.
  * @returns {boolean} Whether the cache needs to be refreshed.
  * @throws {Error} Thrown if the key is not a non-empty string, if the refresh interval is not a non-zero number, or if there is an error parsing the cached data.
  */
@@ -61,7 +61,7 @@ export function requiresRefresh(key, refreshInterval) {
 /**
  * Retrieves the cached data for a given key.
  *
- * @param key Key used to retrieve the cached data.
+ * @param {string} key Key used to retrieve the cached data.
  * @returns {any|null} Cached data for a given key, or null if the data does not exist.
  * @throws {Error} Thrown if the key is not a non-empty string or if there is an error parsing the cached data.
  */
@@ -83,8 +83,8 @@ export function getCachedData(key) {
 /**
  * Sets the cached data for a given key.
  *
- * @param key Key used to store the data.
- * @param object Object to store.
+ * @param {string} key Key used to store the data.
+ * @param {object} object Object to store.
  * @throws {Error} Thrown if the key is not a non-empty string or if the object is not defined.
  */
 export function setCachedData(key, object) {
@@ -96,7 +96,7 @@ export function setCachedData(key, object) {
 /**
  * Sets the last refresh date on the data associated with a given key.
  *
- * @param key Key used to retrieve and store the cached data.
+ * @param {string} key Key used to retrieve and store the cached data.
  */
 export function setLastRefreshDate(key) {
     const data = getCachedData(key);

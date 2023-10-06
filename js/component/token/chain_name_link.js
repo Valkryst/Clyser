@@ -3,7 +3,7 @@ import {validateChain} from '../../validation.js';
 /**
  * Renders a link to the homepage with a chain name as a query parameter.
  *
- * @param chain Chain name to render a link for.
+ * @param {string} chain Chain name to render a link for.
  * @returns {string} HTML representation of the link.
  * @throws {Error} Thrown if `chain` is not a valid chain.
  */

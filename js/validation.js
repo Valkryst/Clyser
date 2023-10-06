@@ -3,7 +3,7 @@ import {ENDPOINTS} from './api/coingecko/token.js';
 /**
  * Determines whether a given object is an Array.
  *
- * @param object Object to check.
+ * @param {object} object Object to check.
  * @throws {Error} Thrown if the object is not an Array.
  */
 export function validateArray(object) {
@@ -17,7 +17,7 @@ export function validateArray(object) {
 /**
  * Determines whether a given object is a chain.
  *
- * @param object Object to check.
+ * @param {object} object Object to check.
  * @throws {Error} Thrown if the object is not a chain.
  */
 export function validateChain(object) {
@@ -31,7 +31,7 @@ export function validateChain(object) {
 /**
  * Determines whether a given object is an array containing only chains.
  *
- * @param object Object to check.
+ * @param {object} object Object to check.
  * @throws {Error} Thrown if the object is not an array of chains.
  */
 export function validateChainArray(object) {
@@ -45,7 +45,7 @@ export function validateChainArray(object) {
 /**
  * Determines whether a given object is null or undefined.
  *
- * @param object Object to check.
+ * @param {object}  object Object to check.
  * @throws {Error} Thrown if the object is null or undefined.
  */
 export function validateDefined(object) {
@@ -59,7 +59,7 @@ export function validateDefined(object) {
  *
  * This removes all whitespace from the string before checking its length.
  *
- * @param object Object to check.
+ * @param {object} object Object to check.
  * @throws {Error} Thrown if the object is not a non-empty string.
  */
 export function validateNonEmptyString(object) {
@@ -73,7 +73,7 @@ export function validateNonEmptyString(object) {
 /**
  * Determines whether a given object is a non-zero number.
  *
- * @param object Object to check.
+ * @param {object} object Object to check.
  * @throws {Error} Thrown if the object is not a non-zero number.
  */
 export function validateNonZeroNumber(object) {
@@ -87,7 +87,7 @@ export function validateNonZeroNumber(object) {
 /**
  * Determines whether a given object is a number.
  *
- * @param object Object to check.
+ * @param {object} object Object to check.
  * @throws {Error} Thrown if the object is not a number.
  */
 export function validateNumber(object) {
@@ -101,7 +101,7 @@ export function validateNumber(object) {
 /**
  * Determines whether a given object is a string.
  *
- * @param object Object to check.
+ * @param {object} object Object to check.
  * @throws {Error} Thrown if the object is not a string.
  */
 export function validateString(object) {
@@ -115,7 +115,7 @@ export function validateString(object) {
 /**
  * Determines whether a given object is a token.
  *
- * @param object Object to check.
+ * @param {object} object Object to check.
  * @throws {Error} Thrown if the object is not a token.
  */
 export function validateToken(object) {
@@ -151,7 +151,7 @@ export function validateToken(object) {
 /**
  * Determines whether a given object is an array containing only strings.
  *
- * @param array Array to check.
+ * @param {array} array Array to check.
  * @throws {Error} Thrown if the array is not an array of strings.
  */
 export function validateStringArray(array) {
@@ -165,7 +165,7 @@ export function validateStringArray(array) {
 /**
  * Determines whether a given object is an array containing only tokens.
  *
- * @param array Array to check.
+ * @param {array} array Array to check.
  * @throws {Error} Thrown if the array is not an array of tokens.
  */
 export function validateTokenArray(array) {
