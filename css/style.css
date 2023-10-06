@@ -44,7 +44,6 @@ html {
 
 a {
     color: var(--color-link-unvisited);
-    text-decoration: none;
     transition: color 0.3s ease;
 
     &:visited {
