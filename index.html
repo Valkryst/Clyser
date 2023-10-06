@@ -9,17 +9,30 @@
         <link rel="stylesheet" href="css/style.css">
 
         <style>
+            :root {
+                --search-form-max-width: 750px;
+            }
+
             form {
                 position: relative;
                 top: 50%;
                 
                 display: grid;
-                grid-template-columns: auto 8rem 8rem;
-                grid-column-gap: 0.25rem;
-
-                width: 60rem;
+                grid-row-gap: 0.25rem;
+                grid-template-rows: repeat(2, auto);
 
                 margin: 0 auto;
+                padding: 0 1rem;
+
+                max-width: 750px;
+            }
+
+            @media only screen and (min-width: 500px) {
+                form {
+                    grid-column-gap: 0.25rem;
+                    grid-template-columns: auto 20% 20%;
+                    grid-template-rows: 100%;
+                }
             }
         </style>
     </head>
