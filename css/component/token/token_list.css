@@ -1,20 +1,51 @@
 .token-list {
-    --logo-size: 40px;
-
-    border: none;
-
     & > thead {
-        display: none;
+        display: table-header-group;
     }
 
     & > tbody {
         & > tr {
             & > td {
-                display: flex;
+                display: table-cell;
 
-                border-bottom: none;
+                margin-left: 0;
 
                 &:first-child {
+                    display: table-cell;
+                    max-width: 40px;
+
+                    text-align: center;
+
+                    & > img {
+                        border-radius: 50%;
+
+                        image-rendering: pixelated;
+                    }
+                }
+
+                &:not(:first-child) {
+                    max-width: 60px;
+                }
+
+                &:last-child {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    & > thead, & > tbody {
+        & > tr {
+            & > th, & > td {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                &:first-child {
+                    max-width: 40px;
+                }
+
+                &:nth-child(3), &:nth-child(4) {
                     display: none;
                 }
             }
@@ -22,36 +53,27 @@
     }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 500px) {
     .token-list {
-        & > thead {
-            display: table-header-group;
-        }
-
-        & > tbody {
+        & > thead, & > tbody {
             & > tr {
-                & > td {
-                    display: table-cell;
-
-                    margin-left: 0;
-
-                    &:first-child {
+                & > th, & > td {
+                    &:nth-child(3) {
                         display: table-cell;
-                        max-width: calc(var(--logo-size) * 1.5);
-
-                        text-align: center;
-
-                        & > img {
-                            width: var(--logo-size);
-
-                            border-radius: 50%;
-
-                            image-rendering: pixelated;
-                        }
                     }
+                }
+            }
+        }
+    }
+}
 
-                    &:last-child {
-                        margin-bottom: 0;
+@media only screen and (min-width: 600px) {
+    .token-list {
+        & > thead, & > tbody {
+            & > tr {
+                & > th, & > td {
+                    &:nth-child(4) {
+                        display: table-cell;
                     }
                 }
             }
