@@ -12,7 +12,7 @@ export const ChainNameLink = {
         validateChain(chain);
 
         return `
-            <a href='index.html?chains=${chain}' target='_blank'>
+            <a href='tokens.html?chains=${chain}' target='_blank'>
                 ${chain}
             </a>
         `;
